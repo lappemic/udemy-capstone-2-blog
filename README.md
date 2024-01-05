@@ -4,9 +4,14 @@
 
 This project is a simple blog web application built using Express.js with EJS as the templating engine. It features the ability to create, read, update, and delete blog posts. The application serves as an introduction to CRUD operations in a web environment using Node.js and Express.
 
+## Screenshots
+### Mainpage
 ![Screenshot of the Mainpage](./public/images/screenshot_1.png)
+### Createpage
 ![Screenshot of the Createpage](./public/images/screenshot_2.png)
+### Viewpage
 ![Screenshot of the Viewpage](./public/images/screenshot_3.png)
+### Editpage
 ![Screenshot of the Editpage](./public/images/screenshot_4.png)
 
 
