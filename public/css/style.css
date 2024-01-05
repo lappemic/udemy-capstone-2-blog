@@ -31,7 +31,8 @@ header a {
 footer {
     background-color: #333;
     color: white;
-    text-align: center;
+    text-align: left;
+    text-indent: 200px;
     padding: 0.5rem 0;
     position: fixed;
     bottom: 0;

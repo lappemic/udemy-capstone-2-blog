@@ -12,16 +12,16 @@
     Feel free to create a post and see how it looks. Enjoy your visit, and thanks for stopping by!
 </p>
 
-
-
-  <a href="/write">Write a new Blogpost</a>
-  <% if (posts.length === 0) { %>
-    <li>No posts written yet</li>
-  <% } else { %>
-    <% posts.forEach(function(post, index){ %>
-      <div>
-        <h2><a href="/posts/<%= index %>"><%= post.title %></a></h2>
-      </div>
-  <% })} %>
+<form action="/write" style="display: inline;">
+    <button type="submit">Write a new Blogpost</button>
+</form>
+<% if (posts.length === 0) { %>
+<li>No posts written yet</li>
+<% } else { %>
+<% posts.forEach(function(post, index){ %>
+    <div>
+    <h2><a href="/posts/<%= index %>"><%= post.title %></a></h2>
+    </div>
+<% })} %>
 
 <%- include("partials/footer.ejs")  %>
