@@ -1,5 +1,31 @@
-<h1>Blog</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Home</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>My Personal Blog</h1>
+  <a href="/write">Write a new Blogpost</a>
+  <% if (posts.length === 0) { %>
+    <li>No posts written yet</li>
+  <% } else { %>
+    <% posts.forEach(function(post, index){ %>
+      <div>
+          <h2><%= post.title %></h2>
+          <p><%= post.content %></p>
+          <div class="post-actions">
+              <form action="/delete/<%= index %>" method="POST" style="display: inline;">
+                  <button type="submit">Delete</button>
+              </form>
+              <form action="/edit/<%= index %>" method="POST" style="display: inline;">
+                  <button type="submit">Edit</button>
+              </form>
+          </div>
+      </div>
+  <% })} %>
 
-<form action="/write" method="POST">
-  <input type="submit" value="Write new Blogpost">
-</form>
+</body>
+</html>

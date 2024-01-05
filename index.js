@@ -9,15 +9,34 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const blogPosts = [];
+const posts = [];
 
 
 app.get("/", (req, res) => {
-    res.render("index.ejs")
+    res.render('index', { posts: posts });
 });
 
-app.post("/write" , (req, res) => {
-    res.render("write.ejs")
+app.get("/write" , (req, res) => {
+    res.render('write');
+});
+
+app.post('/write', (req, res) => {
+    console.log('You hit the post route')
+    const post = {
+        title: req.body.title,
+        content: req.body.content
+    }
+    console.log(post);
+    posts.push(post);
+    res.redirect("/");
+})
+
+app.post('/delete/:index', (req, res) => {
+    const index = req.params.index;
+    if (index >= 0 && index < posts.length) {
+        posts.splice(index, 1);
+    }
+    res.redirect('/');
 })
 
 app.listen(port, () => {
