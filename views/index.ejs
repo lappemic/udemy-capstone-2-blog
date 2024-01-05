@@ -1,31 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Home</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-<h1>My Personal Blog</h1>
+<%- include("partials/header.ejs")  %>
+
+<h1>Blog Projet</h1>
+<h2>Capstone Projet of Full Stack Webdeveloper Boocamp</h2>
+<p>
+    Hi there! This blog is a simple training project on my journey to become a full-stack developer. It's built with Node.js, Express.js, and EJS.
+</p>
+<p>
+    What's fun here is that every visitor can create their own temporary blog posts! Since there's no database attached, all posts are just temporary, allowing for a playful and hands-on experience with the web application.
+</p>
+<p>
+    Feel free to create a post and see how it looks. Enjoy your visit, and thanks for stopping by!
+</p>
+
+
+
   <a href="/write">Write a new Blogpost</a>
   <% if (posts.length === 0) { %>
     <li>No posts written yet</li>
   <% } else { %>
     <% posts.forEach(function(post, index){ %>
       <div>
-          <h2><%= post.title %></h2>
-          <p><%= post.content %></p>
-          <div class="post-actions">
-              <form action="/delete/<%= index %>" method="POST" style="display: inline;">
-                  <button type="submit">Delete</button>
-              </form>
-              <form action="/edit/<%= index %>" method="POST" style="display: inline;">
-                  <button type="submit">Edit</button>
-              </form>
-          </div>
+        <h2><a href="/posts/<%= index %>"><%= post.title %></a></h2>
       </div>
   <% })} %>
 
-</body>
-</html>
+<%- include("partials/footer.ejs")  %>

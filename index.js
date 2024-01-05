@@ -31,10 +31,52 @@ app.post('/write', (req, res) => {
     res.redirect("/");
 })
 
+app.get('/posts/:index', (req, res) => {
+    const index = req.params.index;
+    if (index >= 0 && index < posts.length) {
+        const post = {
+            title: posts[index].title,
+            content: posts[index].content,
+            index: index,
+        }
+        res.render('post', { post: post });
+    } else {
+        res.redirect('/');
+    }
+})
+
+app.get('/edit/:index', (req, res) => {
+    const index = req.params.index;
+    if (index >= 0 && index < posts.length) {
+        const post = {
+            title: posts[index].title,
+            content: posts[index].content,
+            index: index,
+        }
+        res.render('edit', { post: post });
+    } else {
+        res.redirect('/');
+    }
+})
+
+app.post('/update/:index', (req, res) => {
+    console.log('You hit the update route')
+    const index = req.params.index;
+    if (index >= 0 && index < posts.length) {
+        posts[index].title = req.body.title;
+        posts[index].content = req.body.content;
+        res.redirect('/');
+    } else {
+        res.redirect('/');
+    }
+})
+
 app.post('/delete/:index', (req, res) => {
     const index = req.params.index;
     if (index >= 0 && index < posts.length) {
         posts.splice(index, 1);
+    } else {
+        res.redirect('/');
     }
     res.redirect('/');
 })

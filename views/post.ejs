@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+
+<div class="post-actions">
+    <form action="/delete/<%= post.index %>" method="POST" style="display: inline;">
+        <button type="submit">Delete Post</button>
+    </form>
+    <form action="/edit/<%= post.index %>" method="GET" style="display: inline;">
+        <button type="submit">Edit Post</button>
+    </form>
+    <form action="/" style="display: inline;">
+        <button type="submit">Back to Mainpage</button>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

@@ -4,6 +4,12 @@
 
 This project is a simple blog web application built using Express.js with EJS as the templating engine. It features the ability to create, read, update, and delete blog posts. The application serves as an introduction to CRUD operations in a web environment using Node.js and Express.
 
+## Key Features
+- **Blog Post Creation**: Users can write and post blogs.
+- **Viewing Posts**: Display all blog posts on the home page.
+- **Editing and Deleting**: Each post can be edited or deleted.
+- **No Database**: Posts are temporary and not persisted (no database connected).
+
 ## Key Learnings
 
 - **Express.js Fundamentals**: Gained a solid understanding of Express.js for server-side logic, including routing and middleware.
@@ -16,8 +22,8 @@ This project is a simple blog web application built using Express.js with EJS as
 Clone the repository:
 
 ```bash
-git clone https://github.com/[YourUsername]/express-ejs-blog.git
-cd express-ejs-blog
+git clone https://github.com/lappemic/udemy-capstone-2-blog.git
+cd udemy-capstone-2-blog
 npm install
 ```
 
