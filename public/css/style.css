@@ -8,10 +8,16 @@ body, html {
 
 main {
     min-height: 80vh;
-    padding-top: 50px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding: 2rem;
 }
+
+/* Text Styles */
+.text-container {
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 15px; 
+}
+
 
 /* Header Styles */
 header {
@@ -32,11 +38,16 @@ footer {
     background-color: #333;
     color: white;
     text-align: left;
-    text-indent: 200px;
     padding: 0.5rem 0;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.footer-container {
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 15px; 
 }
 
 /* Form Elements */
